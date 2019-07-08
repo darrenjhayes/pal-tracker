@@ -4,6 +4,8 @@ applications:
     path: build/libs/pal-tracker.jar
     routes:
     - route: pal-tracker-darren-hayes.cfapps.io
+    memory: 384M
     env:
       WELCOME_MESSAGE: Hello from the review environment
-      JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 11.+ } }'
+      JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 11.+ }, memory_calculator: { stack_threads: 10 } }'
+      JAVA_OPTS: '-Xss256k -Xmx192m -XX:MaxMetaspaceSize=100m'
